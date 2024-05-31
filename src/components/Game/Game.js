@@ -18,7 +18,7 @@ function Game() {
     function addGuess(guess) {
         const result = checkGuess(guess, answer);
         if (guesses.length < NUM_OF_GUESSES_ALLOWED) {
-            setGuesses((prevGuesses) => [...prevGuesses, {id: crypto.randomUUID(), guess, result}]);
+            setGuesses((prevGuesses) => [...prevGuesses, {id: crypto.randomUUID(), result}]);
         }
     }
 
