@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GuessInput({addGuess}) {
+function GuessInput({addGuess, gameStatus}) {
     const [guess, setGuess] = React.useState('');
 
     const handleChange = (event) => {
@@ -22,6 +22,7 @@ function GuessInput({addGuess}) {
                    maxLength={5}
                    pattern="[A-Za-z]{5}"
                    title="Please enter exactly 5 alphabetic characters"
+                   disabled={gameStatus !== 'inProgress'}
                    value={guess}
                    onChange={handleChange}/>
         </form>
